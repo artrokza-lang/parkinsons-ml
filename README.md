@@ -34,6 +34,21 @@ The dataset is derived from the study by Max Little et al. (2008).
 * `spread1, spread2, PPE` - Three nonlinear measures of fundamental frequency variation
 </details>
 
+## 📊 Exploratory Data Analysis
+
+Before training the models, we analyze the feature relationships and distributions.
+
+<details>
+<summary><b>Feature Correlation Matrix (Click to expand)</b></summary>
+<br>
+<img src="docs/01_correlation_matrix.png" alt="Correlation Matrix" width="800">
+</details>
+
+### Feature Distributions (Healthy vs. Disease)
+<img src="docs/02_feature_distributions.png" alt="Feature Distributions" width="800">
+
+
+
 ## ⚙️ Pipeline Overview
 
 1. **Data Splitting:** Stratified 80/20 train/test split to prevent data leakage.
@@ -46,7 +61,6 @@ The dataset is derived from the study by Max Little et al. (2008).
    - **XGBoost:** Hyperparameter tuning via `GridSearchCV` (5-fold CV).
    - **Stacking Ensemble:** Combines XGBoost, Random Forest, and SVM using Logistic Regression as a meta-learner.
 5. **Error Analysis:** Saves a CSV of misclassified instances for further review.
-
 ## 🏆 Results & Visualizations
 
 The **Stacking Ensemble** was selected as the best model, outperforming the tuned XGBoost on the test set.
@@ -58,8 +72,9 @@ The **Stacking Ensemble** was selected as the best model, outperforming the tune
 | **Stacking Ensemble (XGB + RF + SVM)** | **92.31%** |
 
 ### Confusion Matrix (Stacking Ensemble)
-<!-- This is how you insert images in GitHub Markdown -->
-![Confusion Matrix](docs/03_confusion_matrix.png)
+<img src="docs/03_confusion_matrix.png" alt="Confusion Matrix" width="500">
+
+*Note: The model correctly identified 28 out of 29 disease cases (high recall).*
 
 ### Feature Correlation Matrix
 ![Correlation Matrix](docs/01_correlation_matrix.png)
