@@ -32,7 +32,7 @@ warnings.filterwarnings("ignore")
 
 # ========== 0. CONFIGURATION ==========
 # Direct, explicit path (adjust if the CSV lives elsewhere).
-DATA_PATH = Path(r"C:\Users\User\Downloads\parkinsons.csv")
+DATA_PATH = Path(__file__).resolve().parent / "data" / "parkinsons.csv"
 
 # Optional override via environment variable.
 if (custom := os.getenv("PARKINSONS_CSV")):
