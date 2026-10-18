@@ -1,0 +1,28 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# ===== Virtual Environment =====
+.venv/
+venv/
+env/
+
+# ===== IDE / Editor =====
+.vscode/
+.idea/
+*.swp
+
+# ===== Jupyter =====
+.ipynb_checkpoints/
+
+# ===== Данные и модели (чтобы не раздувать репозиторий) =====
+# Если хотите, чтобы датасет был в репозитории — удалите строку с *.csv
+*.csv
+*.pkl
+*.joblib
+
+# ===== Графики (если НЕ хотите их хранить в Git, раскомментируйте) =====
+# docs/*.png
+# docs/*.svg
